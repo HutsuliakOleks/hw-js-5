@@ -14,93 +14,96 @@ switch (drinkText) {
     alert("Введіть конкретний Напій");
 }
 alert(drink);
-const dayName = "Субота";
+const dayName = prompt("Введіть день:").toLowerCase();
 let week;
 switch (dayName) {
-  case "Понеділок":
-  case "Вівторок":
-  case "Середа":
-  case "Четвер":
-  case "П'ятниця":
+  case "понеділок":
+  case "вівторок":
+  case "середа":
+  case "четвер":
+  case "п'ятниця":
     week = "Робочий";
-    alert("Це буде ", week, " день");
+    alert("Це буде " + week + " день");
     break;
-  case "Субота":
-  case "Неділя":
+  case "субота":
+  case "неділя":
     week = "Вихідний";
-    alert("Це буде ", week, " день");
+    alert("Це буде " + week + " день");
     break;
   default:
     alert("Такого дня не буде");
 }
-const monthName = "Січень";
+const monthName = prompt("Введіть місяць").toLowerCase();
 let season;
 switch (monthName) {
-  case "Січень":
-  case "Лютий":
-  case "Грудень":
+  case "січень":
+  case "лютий":
+  case "грудень":
     season = "Зима";
-    alert(monthName, " це ", season);
+    alert(monthName + " це " + season);
     break;
-  case "Березень":
-  case "Квітень":
-  case "Травень":
+  case "березень":
+  case "квітень":
+  case "мравень":
     season = "Весна";
-    alert(monthName, " це ", season);
+    alert(monthName + " це " + season);
     break;
-  case "Червень":
-  case "Липень":
-  case "Серпень":
+  case "червень":
+  case "липень":
+  case "серпень":
     season = "Літо";
-    alert(monthName, " це ", season);
+    alert(monthName + " це " + season);
     break;
-  case "Вересень":
-  case "Жовтень":
-  case "Листопад":
+  case "вересень":
+  case "жовтень":
+  case "листопад":
     season = "Осінь";
-    alert(monthName, " це ", season);
+    alert(monthName + " це " + season);
     break;
   default:
     alert("Це неконкретний місяць");
 }
-const walkingColor = "червоний";
+const walkingColor = prompt(
+  "Введіть колір: червоний, жовтий, зелений.",
+).toLowerCase();
 let walkingName;
 switch (walkingColor) {
   case "червоний":
     walkingName = "Стоп";
-    alert("Стоп");
+    alert(walkingName);
+    break;
   case "жовтий":
-    walkingName = "Стоп";
-    alert("Чекати");
+    walkingName = "Чекати";
+    alert(walkingName);
+    break;
   case "зелений":
-    walkingName = "Стоп";
-    alert("Йти");
+    walkingName = "Йти";
+    alert(walkingName);
+    break;
   default:
     alert("Це неправлиьний колір");
 }
 const operationSelection = prompt("Введіть оператор +, -, *, /");
-const number1 = prompt("Введіть перше число:");
-const number2 = prompt("Введіть друге число:");
-let result = "";
-console.dir(Number.toString);
-let convertedResult = parseFloat(result);
+const number1 = parseFloat(prompt("Введіть перше число:"));
+const number2 = parseFloat(prompt("Введіть друге число:"));
+let result;
 switch (operationSelection) {
   case "+":
-    convertedResult = number1 + number2;
+    result = number1 + number2;
     break;
   case "-":
-    convertedResult = number1 - number2;
+    result = number1 - number2;
     break;
   case "*":
-    convertedResult = number1 * number2;
+    result = number1 * number2;
     break;
   case "/":
     if (number1 / 0) {
       alert("На 0 ділити не можна");
     }
-    convertedResult = Math.round(number1 / number2);
+    result = Math.round(number1 / number2);
     break;
   default:
     alert("Введіть коректний оператор");
 }
-alert(convertedResult);
+alert(result);
