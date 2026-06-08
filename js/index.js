@@ -16,66 +16,91 @@ switch (drinkText) {
 alert(drink);
 const dayName = "Субота";
 let week;
-if (
-  dayName == "Понеділок" ||
-  dayName == "Вівторок" ||
-  dayName == "Середа" ||
-  dayName == "Четвер" ||
-  dayName == "П'ятниця"
-) {
-  alert("Це буде робочий день");
-} else if (dayName == "Субота" || dayName == "Неділя") {
-  alert("Це буде вихідний день");
-} else {
-  alert("Такого дня не буде");
+switch (dayName) {
+  case "Понеділок":
+  case "Вівторок":
+  case "Середа":
+  case "Четвер":
+  case "П'ятниця":
+    week = "Робочий";
+    alert("Це буде ", week, " день");
+    break;
+  case "Субота":
+  case "Неділя":
+    week = "Вихідний";
+    alert("Це буде ", week, " день");
+    break;
+  default:
+    alert("Такого дня не буде");
 }
 const monthName = "Січень";
 let season;
-if (monthName == "Січень" || monthName == "Лютий" || monthName == "Грудень") {
-  season = "";
-  alert("Місяць Пори року Зими - це " + monthName);
-} else if (
-  monthName == "Березень" ||
-  monthName == "Квітень" ||
-  monthName == "Травень"
-) {
-  alert("Місяць Пора року Весни - це " + monthName);
-} else if (
-  monthName == "Червень" ||
-  monthName == "Липень" ||
-  monthName == "Серпень"
-) {
-  alert("Місяць Пора року Літа - це " + monthName);
-} else if (
-  monthName == "Вересень" ||
-  monthName == "Жовтень" ||
-  monthName == "Листопад"
-) {
-  alert("Місяць Пора року Осені - це " + monthName);
-} else {
-  alert("Це неконкретний місяць");
+switch (monthName) {
+  case "Січень":
+  case "Лютий":
+  case "Грудень":
+    season = "Зима";
+    alert(monthName, " це ", season);
+    break;
+  case "Березень":
+  case "Квітень":
+  case "Травень":
+    season = "Весна";
+    alert(monthName, " це ", season);
+    break;
+  case "Червень":
+  case "Липень":
+  case "Серпень":
+    season = "Літо";
+    alert(monthName, " це ", season);
+    break;
+  case "Вересень":
+  case "Жовтень":
+  case "Листопад":
+    season = "Осінь";
+    alert(monthName, " це ", season);
+    break;
+  default:
+    alert("Це неконкретний місяць");
+}
+const walkingColor = "червоний";
+let walkingName;
+switch (walkingColor) {
+  case "червоний":
+    walkingName = "Стоп";
+    alert("Стоп");
+  case "жовтий":
+    walkingName = "Стоп";
+    alert("Чекати");
+  case "зелений":
+    walkingName = "Стоп";
+    alert("Йти");
+  default:
+    alert("Це неправлиьний колір");
 }
 const operationSelection = prompt("Введіть оператор +, -, *, /");
 const number1 = prompt("Введіть перше число:");
 const number2 = prompt("Введіть друге число:");
-let result;
+let result = "";
+console.dir(Number.toString);
+let convertedResult = parseFloat(result);
 switch (operationSelection) {
   case "+":
-    result = number1 + number2;
+    convertedResult = number1 + number2;
     break;
   case "-":
-    result = number1 - number2;
+    convertedResult = number1 - number2;
     break;
   case "*":
-    result = number1 * number2;
+    convertedResult = number1 * number2;
     break;
   case "/":
     if (number1 / 0) {
       alert("На 0 ділити не можна");
     }
-    result = Math.round(number1 / number2);
+    convertedResult = Math.round(number1 / number2);
     break;
   default:
     alert("Введіть коректний оператор");
 }
-alert(result);
+alert(convertedResult);
